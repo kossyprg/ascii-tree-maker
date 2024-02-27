@@ -1,0 +1,134 @@
+﻿using System.Windows.Forms;
+
+namespace AsciiTreeMaker
+{
+    /*
+     * FileManager クラス
+     * ファイルの保存状態を監視し、
+     * XMLファイルの読み込み、書き出し命令を出す
+     */
+    internal class FileManager
+    {
+        private readonly NodeEditor treeEditor;
+        private readonly System.Windows.Forms.TreeView treeView;
+        public EditingFile editingFile;
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public FileManager(System.Windows.Forms.TreeView treeView, EditingFile editingFile)
+        {
+            treeEditor = new NodeEditor(treeView);
+            this.treeView = treeView;
+            this.editingFile = editingFile;
+        }
+
+        /// <summary>
+        /// XMLファイル形式での保存を実行する
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public bool Save(string path = null)
+        {
+            if (path == null && editingFile.IsNotDefined())
+            {
+                // 上書き保存できない
+                // Mainform側で名前を付けて保存を実行させる
+                return false;
+            }
+
+            if (path == null)
+            {
+                // 上書き保存
+                path = editingFile.GetPath();
+                ExportXmlFile.SaveTreeViewAsXmlFile(treeView, path);
+                editingFile.UpdateSaveState(true);
+            } 
+            else
+            {
+                // path として保存
+                ExportXmlFile.SaveTreeViewAsXmlFile(treeView, path);
+                editingFile.UpdatePath(path);
+                editingFile.UpdateSaveState(true);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 初期状態に戻す
+        /// 新規作成時に実行することを想定
+        /// </summary>
+        public void InitializeFileState()
+        {
+            editingFile.Initialize();
+        }
+
+        /// <summary>
+        /// ユーザにロードするファイルを尋ねて読み込む
+        /// </summary>
+        /// <returns></returns>
+        public void AskAndLoadFile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Title = "ファイルを選択してください";
+            openFileDialog.Filter = "XMLファイル|*.xml|すべてのファイル|*.*";
+            openFileDialog.FilterIndex = 0;
+
+            // ダイアログを表示して選択されたファイルを開く
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            string filepath = openFileDialog.FileName;
+            if (!ImportXmlFile.LoadXmlFileAndCreateTreeView(treeView, treeEditor, filepath))
+            {
+                return;
+            }
+
+            editingFile.UpdatePath(filepath);
+            editingFile.UpdateSaveState(true);
+
+            return;
+        }
+
+        /// <summary>
+        /// ユーザにファイル名を尋ねて書き出す
+        /// </summary>
+        /// <returns></returns>
+        public bool AskAndSaveFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Title = "リストファイルを選択してください";
+            saveFileDialog.FileName = "*.xml";
+            saveFileDialog.Filter = "XMLファイル|*.xml|すべてのファイル|*.*";
+            saveFileDialog.FilterIndex = 0;
+            saveFileDialog.RestoreDirectory = false;
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.DefaultExt = "XML";
+            saveFileDialog.AddExtension = true;
+
+            if (saveFileDialog.ShowDialog() != DialogResult.OK)
+            {
+                return false;
+            }
+
+            string filepath = saveFileDialog.FileName;
+            Save(filepath);
+
+            return true;
+        }
+
+        /// <summary>
+        /// 樹形図に変更が加わった際のファイル側の処理
+        /// </summary>
+        public void TreeViewHasChanged()
+        {
+            bool isSaved = false;
+            editingFile.UpdateSaveState(isSaved);
+        }
+    }
+}
