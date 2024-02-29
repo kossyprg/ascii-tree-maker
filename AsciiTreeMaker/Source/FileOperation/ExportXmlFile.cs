@@ -3,13 +3,17 @@ using System.Xml;
 
 namespace AsciiTreeMaker
 {
+    /*
+     * ExportXmlFile クラス
+     * XML形式で出力する機能を有する
+     */
     internal static class ExportXmlFile
     {
         /// <summary>
         /// 樹形図をXML形式で出力する
         /// </summary>
-        /// <param name="filepath">ファイルパス</param>
-        /// <returns></returns>
+        /// <param name="treeView"></param>
+        /// <param name="filepath">完全パス</param>
         public static void SaveTreeViewAsXmlFile(System.Windows.Forms.TreeView treeView, string filepath)
         {
             XmlDocument exportXmlDocument = new XmlDocument();

@@ -2,6 +2,10 @@
 
 namespace AsciiTreeMaker.Source
 {
+    /*
+     * NoNodeSelected クラス
+     * ノードが選択されていない時の警告
+     */
     internal class NoNodeSelected : IWarning
     {
         public DialogResult ShowWarningMessageBox()

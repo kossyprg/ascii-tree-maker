@@ -18,6 +18,10 @@ namespace AsciiTreeMaker
             NEXT      // 1個下のノードと交換
         }
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="treeView"></param>
         public NodeEditor(TreeView treeView)
         {
             this.treeView = treeView;
@@ -37,7 +41,7 @@ namespace AsciiTreeMaker
         /// 選択されたノードの兄弟ノードを作成する
         /// </summary>
         /// <param name="nodeText">ノードのテキスト</param>
-        /// <returns></returns>
+        /// <returns>ノードの追加に成功したら true</returns>
         public bool AddBrotherNode(string nodeText = null)
         {
             NodeLabel nodeLabel = new NodeLabel(nodeText);
@@ -68,7 +72,7 @@ namespace AsciiTreeMaker
         /// 選択されたノードの子ノードを作成する
         /// </summary>
         /// <param name="nodeText">ノードのテキスト</param>
-        /// <returns></returns>
+        /// <returns>ノードの追加に成功したら true</returns>
         public bool AddChildNode(string nodeText = null)
         {
             NodeLabel nodeLabel = new NodeLabel(nodeText);
@@ -89,7 +93,7 @@ namespace AsciiTreeMaker
         /// <summary>
         /// 選択状態のノードを削除する
         /// </summary>
-        /// <returns></returns>
+        /// <returns>削除に成功したら true</returns>
         public bool RemoveSelectedNode()
         {
             // 選択状態のノードがないなら false を返す

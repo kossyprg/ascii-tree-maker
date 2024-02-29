@@ -3,6 +3,10 @@ using System.IO;
 
 namespace AsciiTreeMaker
 {
+    /*
+     * EditingFile クラス
+     * 編集中のファイルの情報を管理する
+     */
     internal class EditingFile
     {
         private const string INITIAL_FILE_NAME = "Untitled.xml";

@@ -11,7 +11,7 @@ namespace AsciiTreeMaker
     public partial class Mainform : Form
     {
         private readonly TreeConverter treeConverter;
-        private readonly NodeEditor treeEditor;
+        private readonly NodeEditor nodeEditor;
         private readonly FileManager fileManager;
         private readonly TextFormatTreeDesigner textFormatTreeDesigner;
         private readonly TextFormatTreeBranchLength branchLength;
@@ -23,7 +23,7 @@ namespace AsciiTreeMaker
         {
             InitializeComponent();
 
-            treeEditor = new NodeEditor(treeView);
+            nodeEditor = new NodeEditor(treeView);
 
             EditingFile editingFile = new EditingFile();
             editingFile.EditFileStatusChanged += UpdateEditingFileName;
@@ -109,7 +109,7 @@ namespace AsciiTreeMaker
         /// <param name="e"></param>
         private void AddChildNode_ToolStripButton_Click(object sender, EventArgs e)
         {
-            bool success = treeEditor.AddChildNode();
+            bool success = nodeEditor.AddChildNode();
             if (success == false)
             {
                 IWarning warning = new NoNodeSelected();
@@ -127,7 +127,7 @@ namespace AsciiTreeMaker
         /// <param name="e"></param>
         private void AddBrotherNode_ToolStripButton_Click(object sender, EventArgs e)
         {
-            bool success = treeEditor.AddBrotherNode();
+            bool success = nodeEditor.AddBrotherNode();
             if (success == false)
             {
                 IWarning warning = new NoNodeSelected();
@@ -145,7 +145,7 @@ namespace AsciiTreeMaker
         /// <param name="e"></param>
         private void RemoveSelectedNode_ToolStripButton_Click(object sender, EventArgs e)
         {
-            bool success = treeEditor.RemoveSelectedNode();
+            bool success = nodeEditor.RemoveSelectedNode();
             if (success == false)
             {
                 IWarning warning = new NoNodeSelected();
@@ -156,7 +156,7 @@ namespace AsciiTreeMaker
             // 樹形図が空になったら、実質的に初期化処理を行う
             if (TreeViewIsEmpty())
             {
-                treeEditor.InitializeTreeViewContents();
+                nodeEditor.InitializeTreeViewContents();
             }
 
             fileManager.TreeViewHasChanged();
@@ -215,7 +215,7 @@ namespace AsciiTreeMaker
             // 未保存の編集内容がある時だけユーザに確認をとる(短絡評価)
             if (fileManager.editingFile.IsSaved() || ConfirmClearTreeView())
             {
-                treeEditor.InitializeTreeViewContents();
+                nodeEditor.InitializeTreeViewContents();
                 fileManager.InitializeFileState();
             }
         }
@@ -320,7 +320,7 @@ namespace AsciiTreeMaker
         /// <param name="e"></param>
         private void SwapNextNode_ToolStripButton_Click(object sender, EventArgs e)
         {
-            if (treeEditor.SwapNodes(NodeEditor.SwapType.NEXT))
+            if (nodeEditor.SwapNodes(NodeEditor.SwapType.NEXT))
             {
                 fileManager.TreeViewHasChanged();
             }
@@ -333,7 +333,7 @@ namespace AsciiTreeMaker
         /// <param name="e"></param>
         private void SwapPreviousNode_ToolStripButton_Click(object sender, EventArgs e)
         {
-            if (treeEditor.SwapNodes(NodeEditor.SwapType.PREVIOUS))
+            if (nodeEditor.SwapNodes(NodeEditor.SwapType.PREVIOUS))
             {
                 fileManager.TreeViewHasChanged();
             }

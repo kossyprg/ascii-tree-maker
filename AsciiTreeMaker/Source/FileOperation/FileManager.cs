@@ -9,25 +9,28 @@ namespace AsciiTreeMaker
      */
     internal class FileManager
     {
-        private readonly NodeEditor treeEditor;
+        private readonly NodeEditor nodeEditor;
         private readonly System.Windows.Forms.TreeView treeView;
         public EditingFile editingFile;
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
+        /// <param name="treeView"></param>
+        /// <param name="editingFile"></param>
         public FileManager(System.Windows.Forms.TreeView treeView, EditingFile editingFile)
         {
-            treeEditor = new NodeEditor(treeView);
+            nodeEditor = new NodeEditor(treeView);
             this.treeView = treeView;
             this.editingFile = editingFile;
         }
 
         /// <summary>
-        /// XMLファイル形式での保存を実行する
+        /// 指定したファイルの保存を行う
+        /// 指定がない場合は上書き保存を実行する
         /// </summary>
         /// <param name="path"></param>
-        /// <returns></returns>
+        /// <returns>保存に成功したら true</returns>
         public bool Save(string path = null)
         {
             if (path == null && editingFile.IsNotDefined())
@@ -83,7 +86,7 @@ namespace AsciiTreeMaker
             }
 
             string filepath = openFileDialog.FileName;
-            if (!ImportXmlFile.LoadXmlFileAndCreateTreeView(treeView, treeEditor, filepath))
+            if (!ImportXmlFile.LoadXmlFileAndCreateTreeView(treeView, nodeEditor, filepath))
             {
                 return;
             }

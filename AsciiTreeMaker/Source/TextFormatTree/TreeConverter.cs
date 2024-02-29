@@ -18,8 +18,10 @@ namespace AsciiTreeMaker
         private bool _over_level = false;
 
         /// <summary>
-        /// TreeConverter のコンストラクタ
+        /// コンストラクタ
         /// </summary>
+        /// <param name="treeView"></param>
+        /// <param name="textFormatTreeDesigner"></param>
         public TreeConverter(in TreeView treeView, in TextFormatTreeDesigner textFormatTreeDesigner)
         {
             this.treeView = treeView;

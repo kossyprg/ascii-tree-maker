@@ -50,7 +50,6 @@ namespace AsciiTreeMaker
         /// 枝の長さを更新する
         /// </summary>
         /// <param name="branchLength"></param>
-        /// <returns>テキスト変換後の樹形図の枝の長さ</returns>
         public void Update(in TextFormatTreeBranchLength branchLength)
         {
             Value = branchLength.Value;
