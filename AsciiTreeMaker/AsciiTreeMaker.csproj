@@ -118,6 +118,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icon\AppIcon.ico" />
     <Content Include="Image\AddBrotherNodeButtonImage.png" />
     <Content Include="Image\AddChildNodeButtonImage.png" />
     <Content Include="Image\CollapseTreeView_ToolStripButton.png" />
