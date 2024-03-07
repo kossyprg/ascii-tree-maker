@@ -98,6 +98,27 @@ namespace AsciiTreeMaker
         }
 
         /// <summary>
+        /// ユーザにフォルダを尋ねて読み込む
+        /// </summary>
+        public void AskAndCreateFromFolder()
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+
+            folderBrowserDialog.Description = "フォルダを選択してください";
+
+            if (folderBrowserDialog.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            string folderpath = folderBrowserDialog.SelectedPath;
+            LoadFolder.LoadFolderAndCreateTreeView(treeView, nodeEditor, folderpath);
+
+            editingFile.UpdatePath(string.Empty);
+            editingFile.UpdateSaveState(false);
+        }
+
+        /// <summary>
         /// ユーザにファイル名を尋ねて書き出す
         /// </summary>
         /// <returns></returns>

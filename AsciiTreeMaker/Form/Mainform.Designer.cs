@@ -51,6 +51,7 @@
             this.Settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateFromFolder_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -203,6 +204,7 @@
             this.File_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CreateNewTreeView_ToolStripMenuItem,
             this.OpenXMLFile_ToolStripMenuItem,
+            this.CreateFromFolder_ToolStripMenuItem,
             this.SaveXMLFile_ToolStripMenuItem,
             this.SaveAsXMLFile_ToolStripMenuItem,
             this.toolStripSeparator1,
@@ -210,7 +212,7 @@
             this.toolStripSeparator2,
             this.Exit_ToolStripMenuItem});
             this.File_ToolStripMenuItem.Name = "File_ToolStripMenuItem";
-            this.File_ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.File_ToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.File_ToolStripMenuItem.Text = "ファイル";
             // 
             // CreateNewTreeView_ToolStripMenuItem
@@ -219,7 +221,7 @@
             this.CreateNewTreeView_ToolStripMenuItem.Name = "CreateNewTreeView_ToolStripMenuItem";
             this.CreateNewTreeView_ToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.CreateNewTreeView_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.CreateNewTreeView_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.CreateNewTreeView_ToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.CreateNewTreeView_ToolStripMenuItem.Text = "新規作成";
             this.CreateNewTreeView_ToolStripMenuItem.Click += new System.EventHandler(this.CreateNewTreeView_ToolStripMenuItem_Click);
             // 
@@ -228,7 +230,7 @@
             this.OpenXMLFile_ToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.OpenXMLFile_ToolStripMenuItem.Name = "OpenXMLFile_ToolStripMenuItem";
             this.OpenXMLFile_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenXMLFile_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.OpenXMLFile_ToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.OpenXMLFile_ToolStripMenuItem.Text = "開く";
             this.OpenXMLFile_ToolStripMenuItem.Click += new System.EventHandler(this.OpenXMLFile_ToolStripMenuItem_Click);
             // 
@@ -237,7 +239,7 @@
             this.SaveXMLFile_ToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.SaveXMLFile_ToolStripMenuItem.Name = "SaveXMLFile_ToolStripMenuItem";
             this.SaveXMLFile_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.SaveXMLFile_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.SaveXMLFile_ToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.SaveXMLFile_ToolStripMenuItem.Text = "保存";
             this.SaveXMLFile_ToolStripMenuItem.Click += new System.EventHandler(this.SaveXMLFile_ToolStripMenuItem_Click);
             // 
@@ -247,35 +249,45 @@
             this.SaveAsXMLFile_ToolStripMenuItem.Name = "SaveAsXMLFile_ToolStripMenuItem";
             this.SaveAsXMLFile_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.SaveAsXMLFile_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.SaveAsXMLFile_ToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.SaveAsXMLFile_ToolStripMenuItem.Text = "名前を付けて保存";
             this.SaveAsXMLFile_ToolStripMenuItem.Click += new System.EventHandler(this.SaveAsXMLFile_ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(229, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(254, 6);
             // 
             // Settings_ToolStripMenuItem
             // 
             this.Settings_ToolStripMenuItem.Name = "Settings_ToolStripMenuItem";
-            this.Settings_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.Settings_ToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.Settings_ToolStripMenuItem.Text = "設定";
             this.Settings_ToolStripMenuItem.Click += new System.EventHandler(this.Settings_ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(229, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(254, 6);
             // 
             // Exit_ToolStripMenuItem
             // 
             this.Exit_ToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.Exit_ToolStripMenuItem.Name = "Exit_ToolStripMenuItem";
             this.Exit_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.Exit_ToolStripMenuItem.Text = "終了";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
+            // 
+            // CreateFromFolder_ToolStripMenuItem
+            // 
+            this.CreateFromFolder_ToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.CreateFromFolder_ToolStripMenuItem.Name = "CreateFromFolder_ToolStripMenuItem";
+            this.CreateFromFolder_ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.O)));
+            this.CreateFromFolder_ToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.CreateFromFolder_ToolStripMenuItem.Text = "フォルダから作成";
+            this.CreateFromFolder_ToolStripMenuItem.Click += new System.EventHandler(this.CreateFromFolder_ToolStripMenuItem_Click);
             // 
             // Mainform
             // 
@@ -324,6 +336,7 @@
         private System.Windows.Forms.ToolStripButton ExpandTreeView_ToolStripButton;
         private System.Windows.Forms.ToolStripButton CollapseTreeView_ToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem CreateFromFolder_ToolStripMenuItem;
     }
 }
 
