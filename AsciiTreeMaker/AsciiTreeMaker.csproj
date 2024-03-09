@@ -63,7 +63,7 @@
   <ItemGroup>
     <Compile Include="Source\AppBaseInfo.cs" />
     <Compile Include="Source\FileOperation\EditingFile.cs" />
-    <Compile Include="Source\FileOperation\LoadFolder.cs" />
+    <Compile Include="Source\FileOperation\DirectoryStructureCreator.cs" />
     <Compile Include="Source\TreeViewEdit\NodeLabel.cs" />
     <Compile Include="Source\Warning\NoNodeSelected.cs" />
     <Compile Include="Source\TextFormatTree\TextFormatTreeBranchLength.cs" />

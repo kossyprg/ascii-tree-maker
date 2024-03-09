@@ -256,7 +256,7 @@ namespace AsciiTreeMaker
             // 未保存の編集内容がある時だけユーザに確認をとる(短絡評価)
             if (fileManager.editingFile.IsSaved() || ConfirmClearTreeView())
             {
-                fileManager.AskAndCreateFromFolder();
+                fileManager.AskRootFolderAndCreateDirectoryStructureTreeView();
             }
         }
 

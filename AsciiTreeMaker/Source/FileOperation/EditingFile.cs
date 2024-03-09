@@ -30,11 +30,11 @@ namespace AsciiTreeMaker
         /// <summary>
         /// 編集中ファイルの状態を初期化する
         /// </summary>
-        /// <returns></returns>
-        public void Initialize()
+        /// <param name="isSaved">保存済みの扱いなら true</param>
+        public void Initialize(bool isSaved = true)
         {
             UpdatePath(EMPTY_FILE_PATH);
-            UpdateSaveState(true);
+            UpdateSaveState(isSaved);
         }
 
         /// <summary>

@@ -98,12 +98,11 @@ namespace AsciiTreeMaker
         }
 
         /// <summary>
-        /// ユーザにフォルダを尋ねて読み込む
+        /// ユーザにフォルダを尋ねてフォルダ構成を表す樹形図を生成する
         /// </summary>
-        public void AskAndCreateFromFolder()
+        public void AskRootFolderAndCreateDirectoryStructureTreeView()
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-
             folderBrowserDialog.Description = "フォルダを選択してください";
 
             if (folderBrowserDialog.ShowDialog() != DialogResult.OK)
@@ -112,10 +111,18 @@ namespace AsciiTreeMaker
             }
 
             string folderpath = folderBrowserDialog.SelectedPath;
-            LoadFolder.LoadFolderAndCreateTreeView(treeView, nodeEditor, folderpath);
 
-            editingFile.UpdatePath(string.Empty);
-            editingFile.UpdateSaveState(false);
+            // 樹形図の生成に失敗したら、初期状態に戻す
+            // アクセス権がないファイルにアクセスしたときに発生
+            if (!DirectoryStructureCreator.CreateDirectoryStructureTreeView(treeView, nodeEditor, folderpath))
+            {
+                editingFile.Initialize();
+                return;
+            }
+
+            // 生成された樹形図はまだファイル保存してない
+            bool isSaved = false;
+            editingFile.Initialize(isSaved);
         }
 
         /// <summary>
