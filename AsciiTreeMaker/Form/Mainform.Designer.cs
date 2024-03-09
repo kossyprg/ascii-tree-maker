@@ -45,12 +45,14 @@
             this.File_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateNewTreeView_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenXMLFile_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateFromFolder_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveXMLFile_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsXMLFile_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Settings_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -206,6 +208,8 @@
             this.SaveXMLFile_ToolStripMenuItem,
             this.SaveAsXMLFile_ToolStripMenuItem,
             this.toolStripSeparator1,
+            this.CreateFromFolder_ToolStripMenuItem,
+            this.toolStripSeparator5,
             this.Settings_ToolStripMenuItem,
             this.toolStripSeparator2,
             this.Exit_ToolStripMenuItem});
@@ -231,6 +235,14 @@
             this.OpenXMLFile_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.OpenXMLFile_ToolStripMenuItem.Text = "開く";
             this.OpenXMLFile_ToolStripMenuItem.Click += new System.EventHandler(this.OpenXMLFile_ToolStripMenuItem_Click);
+            // 
+            // CreateFromFolder_ToolStripMenuItem
+            // 
+            this.CreateFromFolder_ToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.CreateFromFolder_ToolStripMenuItem.Name = "CreateFromFolder_ToolStripMenuItem";
+            this.CreateFromFolder_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.CreateFromFolder_ToolStripMenuItem.Text = "フォルダから樹形図を生成";
+            this.CreateFromFolder_ToolStripMenuItem.Click += new System.EventHandler(this.CreateFromFolder_ToolStripMenuItem_Click);
             // 
             // SaveXMLFile_ToolStripMenuItem
             // 
@@ -276,6 +288,11 @@
             this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.Exit_ToolStripMenuItem.Text = "終了";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(229, 6);
             // 
             // Mainform
             // 
@@ -324,6 +341,8 @@
         private System.Windows.Forms.ToolStripButton ExpandTreeView_ToolStripButton;
         private System.Windows.Forms.ToolStripButton CollapseTreeView_ToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem CreateFromFolder_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
 

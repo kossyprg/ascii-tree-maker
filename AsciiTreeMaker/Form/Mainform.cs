@@ -247,6 +247,20 @@ namespace AsciiTreeMaker
         }
 
         /// <summary>
+        /// ファイルタブの「フォルダから作成」を押下した際の処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CreateFromFolder_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 未保存の編集内容がある時だけユーザに確認をとる(短絡評価)
+            if (fileManager.editingFile.IsSaved() || ConfirmClearTreeView())
+            {
+                fileManager.AskRootFolderAndCreateDirectoryStructureTreeView();
+            }
+        }
+
+        /// <summary>
         /// ファイルタブの「保存」を押下した際の処理
         /// </summary>
         /// <param name="sender"></param>
