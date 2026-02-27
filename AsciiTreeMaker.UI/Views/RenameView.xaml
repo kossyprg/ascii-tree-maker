@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="AsciiTreeMaker.UI.Views.RenameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="clr-namespace:AsciiTreeMaker.UI.Helpers"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterOwner" />
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="ShowInTaskbar" Value="True"/>
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="143" />
+        </Style>
+    </prism:Dialog.WindowStyle>
+    <Grid Margin="12"
+          FocusManager.FocusedElement="{Binding ElementName=EditBox}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="ノード名:"/>
+
+        <TextBox x:Name="EditBox"
+                 Grid.Row="1" 
+                 Margin="0,6,0,10"
+                 Width="260"
+                 AcceptsReturn="False"
+                 l:TextBoxHelper.Placeholder="テキストを入力"
+                 Text="{Binding EditText, UpdateSourceTrigger=PropertyChanged}" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" Width="80" Margin="0,0,8,0"
+                    Command="{Binding OKButton}"
+                    IsDefault="True"/>
+            <Button Content="Cancel" Width="80"
+                    Command="{Binding CancelButton}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

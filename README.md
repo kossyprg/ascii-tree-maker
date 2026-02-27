@@ -17,11 +17,6 @@ root
 テキスト形式の樹形図を編集するWindowsアプリです。
 GUI操作で樹形図を作成し、テキスト形式へ変換することができます。
 
-
-↓ Qiitaの紹介記事
-
-[【個人開発】フォルダ構成図を作るWindowsアプリを作った](https://qiita.com/kossyprg/items/2b6b10223adf34bce194)
-
 ## 要件
 
 - Windows
@@ -60,10 +55,6 @@ GUI操作で樹形図を作成し、テキスト形式へ変換することが�
 本リポジトリの[トップページ](https://github.com/kossyprg/ascii-tree-maker)のReleasesから最新版のアプリをダウンロードしてください。
 
 exeファイル単体で実行することができます。
-
-## 作成者
-
-[Xアカウント](https://twitter.com/kossy_engineer)
 
 ## ライセンス
 

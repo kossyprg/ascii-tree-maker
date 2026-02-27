@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <AssemblyName>AsciiTreeMaker</AssemblyName>
+    <ApplicationIcon>Assets\Icons\tree.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\Icons\add-brother.png" />
+    <None Remove="Assets\Icons\add-child.png" />
+    <None Remove="Assets\Icons\collapse-tree.png" />
+    <None Remove="Assets\Icons\convert-to-text.png" />
+    <None Remove="Assets\Icons\down.png" />
+    <None Remove="Assets\Icons\expand-tree.png" />
+    <None Remove="Assets\Icons\remove.png" />
+    <None Remove="Assets\Icons\rename.png" />
+    <None Remove="Assets\Icons\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icons\tree.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AsciiTreeMaker.Domain\AsciiTreeMaker.Domain.csproj" />
+    <ProjectReference Include="..\AsciiTreeMaker.Infrastructure\AsciiTreeMaker.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\add-brother.png" />
+    <Resource Include="Assets\Images\add-child.png" />
+    <Resource Include="Assets\Images\collapse-tree.png" />
+    <Resource Include="Assets\Images\convert-to-text.png" />
+    <Resource Include="Assets\Images\down.png" />
+    <Resource Include="Assets\Images\expand-tree.png" />
+    <Resource Include="Assets\Images\remove.png" />
+    <Resource Include="Assets\Images\rename.png" />
+    <Resource Include="Assets\Images\up.png" />
+  </ItemGroup>
+</Project>

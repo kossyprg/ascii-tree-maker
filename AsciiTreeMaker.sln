@@ -1,9 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34202.233
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11512.155 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsciiTreeMaker", "AsciiTreeMaker\AsciiTreeMaker.csproj", "{163B360B-EFAC-4367-A668-DA2FFF7D4658}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsciiTreeMaker.UI", "AsciiTreeMaker.UI\AsciiTreeMaker.UI.csproj", "{E1C8F867-FEE2-4372-B554-17BB22F2577D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3B792A81-3697-4FE9-8013-9D72C67469F8} = {3B792A81-3697-4FE9-8013-9D72C67469F8}
+		{85EC50FB-EC9E-4420-A2AF-4B4C28626D85} = {85EC50FB-EC9E-4420-A2AF-4B4C28626D85}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsciiTreeMaker.Domain", "AsciiTreeMaker.Domain\AsciiTreeMaker.Domain.csproj", "{3B792A81-3697-4FE9-8013-9D72C67469F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsciiTreeMakerTest.Tests", "AsciiTreeMakerTest.Tests\AsciiTreeMakerTest.Tests.csproj", "{BCCE6BD4-A366-43AA-B418-CC950FAC0BD0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3B792A81-3697-4FE9-8013-9D72C67469F8} = {3B792A81-3697-4FE9-8013-9D72C67469F8}
+		{85EC50FB-EC9E-4420-A2AF-4B4C28626D85} = {85EC50FB-EC9E-4420-A2AF-4B4C28626D85}
+		{E1C8F867-FEE2-4372-B554-17BB22F2577D} = {E1C8F867-FEE2-4372-B554-17BB22F2577D}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsciiTreeMaker.Infrastructure", "AsciiTreeMaker.Infrastructure\AsciiTreeMaker.Infrastructure.csproj", "{85EC50FB-EC9E-4420-A2AF-4B4C28626D85}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3B792A81-3697-4FE9-8013-9D72C67469F8} = {3B792A81-3697-4FE9-8013-9D72C67469F8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +29,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{163B360B-EFAC-4367-A668-DA2FFF7D4658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{163B360B-EFAC-4367-A668-DA2FFF7D4658}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{163B360B-EFAC-4367-A668-DA2FFF7D4658}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{163B360B-EFAC-4367-A668-DA2FFF7D4658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C8F867-FEE2-4372-B554-17BB22F2577D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C8F867-FEE2-4372-B554-17BB22F2577D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C8F867-FEE2-4372-B554-17BB22F2577D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C8F867-FEE2-4372-B554-17BB22F2577D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B792A81-3697-4FE9-8013-9D72C67469F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B792A81-3697-4FE9-8013-9D72C67469F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B792A81-3697-4FE9-8013-9D72C67469F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B792A81-3697-4FE9-8013-9D72C67469F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCCE6BD4-A366-43AA-B418-CC950FAC0BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCCE6BD4-A366-43AA-B418-CC950FAC0BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCCE6BD4-A366-43AA-B418-CC950FAC0BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCCE6BD4-A366-43AA-B418-CC950FAC0BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85EC50FB-EC9E-4420-A2AF-4B4C28626D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85EC50FB-EC9E-4420-A2AF-4B4C28626D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85EC50FB-EC9E-4420-A2AF-4B4C28626D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85EC50FB-EC9E-4420-A2AF-4B4C28626D85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {14CE72F3-CB07-4D5C-9D73-B245DA2F2B8D}
+		SolutionGuid = {58D3618F-5413-4C4A-8651-5772771411D9}
 	EndGlobalSection
 EndGlobal
